@@ -1,15 +1,20 @@
 // ConsoleApplication1.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include <iostream>
-#include <set>
-#include <unordered_set>
-#include <list>
 #include <cstdlib>
+#include <iostream>
+#include <string>
+
+#include <list>
+#include <map>
+#include <set>
+#include <vector>
+#include <unordered_map>
+#include <unordered_set>
 
 using namespace std;
 
-unsigned char die() // unsigned char : [0, 255]
+int die() // unsigned char : [0, 255]
 {
 	return (1 + rand() % 6); // 1D6
 }
@@ -17,13 +22,13 @@ unsigned char die() // unsigned char : [0, 255]
 int main()
 {
 	srand(time(NULL));
-	list<unsigned char> rolls;
+	map<string,int> rolls;
 	for (size_t iteration = 0; iteration < 12; iteration++)
 	{
-		rolls.push_back(die());
+		rolls[to_string(iteration)] = die();
 		for (auto& i : rolls)
 		{
-			cout << i << " ";
+			cout << i.first << ":" << i.second << " ";
 		}
 		cout << endl;
 	}
