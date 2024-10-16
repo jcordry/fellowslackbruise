@@ -9,15 +9,15 @@
 
 using namespace std;
 
-int die()
+unsigned char die() // unsigned char : [0, 255]
 {
-	return (1 + rand() % 6);
+	return (1 + rand() % 6); // 1D6
 }
 
 int main()
 {
 	srand(time(NULL));
-	list<int> rolls;
+	list<unsigned char> rolls;
 	for (size_t iteration = 0; iteration < 12; iteration++)
 	{
 		rolls.push_back(die());
