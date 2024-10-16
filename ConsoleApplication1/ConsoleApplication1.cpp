@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <set>
+#include <unordered_set>
+#include <list>
 #include <cstdlib>
 
 using namespace std;
@@ -15,10 +17,10 @@ int die()
 int main()
 {
 	srand(time(NULL));
-	set<int> rolls;
+	list<int> rolls;
 	for (size_t iteration = 0; iteration < 12; iteration++)
 	{
-		rolls.insert(die());
+		rolls.push_back(die());
 		for (auto& i : rolls)
 		{
 			cout << i << " ";
