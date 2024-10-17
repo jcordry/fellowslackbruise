@@ -22,10 +22,10 @@ int die() // unsigned char : [0, 255]
 int main()
 {
 	srand(time(NULL));
-	map<string,int> rolls;
-	for (size_t iteration = 0; iteration < 12; iteration++)
+	map<char,int> rolls;
+	for (char iteration = 'a'; iteration < 'l'; iteration++)
 	{
-		rolls[to_string(iteration)] = die();
+		rolls[iteration] = die();
 		for (auto& i : rolls)
 		{
 			cout << i.first << ":" << i.second << " ";
